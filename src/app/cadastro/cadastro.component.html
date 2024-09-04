@@ -1,0 +1,56 @@
+<app-menu></app-menu>
+<div class="pagina">
+  <header>
+     <h1>Administração | Organização dos cadastro</h1>
+  </header>
+  <form [formGroup]="cadastro">
+    <div>
+        <mat-form-field appearance="outline" color="warn"> 
+          <mat-label>apelido</mat-label>
+          <input matInput formControlName="apelido">
+         </mat-form-field>
+
+         <mat-form-field appearance="outline" color="warn">
+            <mat-label>num_linha</mat-label>
+            <input matInput formControlName="num_linha"> 
+           </mat-form-field>
+
+       
+  </div>
+  <div>
+      <mat-form-field appearance="outline" color="warn"> 
+        <mat-label>num_coluna</mat-label>
+        <input matInput formControlName="num_coluna">
+       </mat-form-field>
+
+      </div>
+      
+      <div class="controles">
+        <button type="button" mat-raised-button color="warn" [disabled]="cadastro.enabled"  (click)="onIncluir()">Incluir</button>
+        <button type="button" mat-raised-button color="warn" [disabled]="cadastro.invalid"  (click)="onSalvar()">Salvar</button>
+        <button type="button" mat-raised-button color="warn" [disabled]="cadastro.disabled"  (click)="onCancelar()">Cancelar</button>
+    </div>
+
+
+  </form>
+
+  <div class="relatorio">
+    <h2>Cadastro</h2>
+    <table>
+        <tr>
+            <th>ação</th>
+            <th>apelido</th>
+            <th>num_linhas</th>
+            <th>num_colunas</th>
+        
+           </tr>
+           <tr *ngFor=" let cadastro of relatorio ">
+            <td><button>Excluir</button></td>
+            <td>{{cadastro.apelido}}</td>
+            <td>{{cadastro.num_linhas}}</td>
+            <td>{{cadastro.num_colunas}}</td>
+           </tr>
+    </table>
+   
+</div>
+</div>

@@ -1,0 +1,72 @@
+<app-menu></app-menu>
+<div class="pagina">
+  <header>
+     <h1>Administração | Organização dos movimento</h1>
+  </header>
+  <form [formGroup]="movimento">
+    <div>
+        <mat-form-field appearance="outline" color="warn"> 
+          <mat-label>tipo</mat-label>
+          <input matInput formControlName="tipo">
+        </mat-form-field>
+
+  </div>
+  <div>
+    <mat-form-field appearance="outline" color="warn"> 
+      <mat-label>produto</mat-label>
+      <input matInput formControlName="produto">
+     </mat-form-field>
+
+</div>
+<div>
+  <mat-form-field appearance="outline" color="warn"> 
+    <mat-label>quantidade</mat-label>
+    <input matInput formControlName="quantidade">
+   </mat-form-field>
+
+</div>
+  <div>
+
+      </div>
+      
+      <div class="controles">
+        <button type="button" mat-raised-button color="warn" [disabled]="movimento.enabled"  (click)="onIncluir()">Incluir</button>
+        <button type="button" mat-raised-button color="warn" [disabled]="movimento.invalid"  (click)="onSalvar()">Salvar</button>
+        <button type="button" mat-raised-button color="warn" [disabled]="movimento.disabled"  (click)="onCancelar()">Cancelar</button>
+    </div>
+
+
+  </form>
+
+  <div class="relatorio">
+    <h2>Cadastro de movimento</h2>
+    <table>
+        <tr>
+          
+          <th>ação</th>
+          <th>data de movimentação</th>
+          <th>produto</th>
+          <th>tipo</th>
+          <th>quantidade</th>
+           
+        </tr>
+        <tr *ngFor=" let movimento of relatorio ">
+            <td><button>Excluir</button></td>
+            <td>{{movimento.dt_movimento}}</td>
+            <td>{{movimento.descricao}}</td>
+            <td>{{movimento.ds_tipo}}</td>
+            <td>{{movimento.quantidade}}</td>
+            
+
+        </tr>
+    </table>
+   
+</div>
+</div>
+
+
+
+
+
+
+

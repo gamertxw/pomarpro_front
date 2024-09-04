@@ -1,0 +1,27 @@
+<app-menu></app-menu>
+<div class="pagina">
+    <header>
+        <h1>Bem vindo ao pomarpro</h1>
+    </header>
+<div class="relatorio">
+    <h2>Estoque atual</h2>
+    <table>
+        <tr>
+            <th>Ação</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+        </tr>
+     
+        <tr *ngFor="let home of relatorio">
+            <td><button disabled>Excluir</button></td>
+            <td> {{home.p_descricao}}</td>
+            <td>{{home.quantidade}}</td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+</div>
+

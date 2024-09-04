@@ -1,0 +1,99 @@
+<app-menu></app-menu>
+<div class="pagina">
+  <header>
+     <h1>Administração | Organização dos arvore</h1>
+  </header>
+  <form [formGroup]="arvore">
+    <div>
+        <mat-form-field appearance="outline" color="warn"> 
+          <mat-label>defensivo</mat-label>
+          <input matInput formControlName="defensivo">
+         </mat-form-field>
+
+         <mat-form-field appearance="outline" color="warn">
+            <mat-label>fertilizante</mat-label>
+            <input matInput formControlName="fertilizante"> 
+           </mat-form-field>
+
+       
+  </div>
+  <div>
+    <mat-form-field appearance="outline" color="warn"> 
+      <mat-label>ultima_verif</mat-label>
+      <input matInput formControlName="ultima_verif">
+     </mat-form-field>
+
+     <mat-form-field appearance="outline" color="warn">
+        <mat-label>linha</mat-label>
+        <input matInput formControlName="linha"> 
+       </mat-form-field>
+
+   
+</div>
+<div>
+    <mat-form-field appearance="outline" color="warn"> 
+      <mat-label>coluna</mat-label>
+      <input matInput formControlName="coluna">
+     </mat-form-field>
+
+     <mat-form-field appearance="outline" color="warn">
+        <mat-label>tipo</mat-label>
+        <input matInput formControlName="tipo"> 
+       </mat-form-field>
+
+   
+</div>
+<div>
+    <mat-form-field appearance="outline" color="warn"> 
+      <mat-label>situacao</mat-label>
+      <input matInput formControlName="situacao">
+     </mat-form-field>
+
+     <mat-form-field appearance="outline" color="warn">
+        <mat-label>pomar</mat-label>
+        <input matInput formControlName="pomar"> 
+       </mat-form-field>
+
+   
+</div>
+
+      <div class="controles">
+        <button type="button" mat-raised-button color="warn" [disabled]="arvore.enabled"  (click)="onIncluir()">Incluir</button>
+        <button type="button" mat-raised-button color="warn" [disabled]="arvore.invalid"  (click)="onSalvar()">Salvar</button>
+        <button type="button" mat-raised-button color="warn" [disabled]="arvore.disabled"  (click)="onCancelar()">Cancelar</button>
+    </div>
+
+
+  </form>
+
+  <div class="relatorio">
+    <h2>Cadastro de arvore</h2>
+    <table>
+        <tr>
+            <th>ação</th>
+            <th>defensivo</th>
+            <th>fertilizando</th>
+            <th>ultima_verif</th>
+            <th>linha</th>
+            <th>coluna</th>
+            <th>tipo</th>
+            <th>situacao</th>
+            <th>pomar</th>
+        
+           </tr>
+           <tr *ngFor=" let arvore of relatorio ">
+            <td><button>Excluir</button></td>
+            <td>{{arvore.defensivo}}</td>
+            <td>{{arvore.fertilizando}}</td>
+            <td>{{arvore.ultima_verif}}</td>
+            <td>{{arvore.linha}}</td>
+            <td>{{arvore.linha}}</td>
+            <td>{{arvore.coluna}}</td>
+            <td>{{arvore.tipo}}</td>
+            <td>{{arvore.situacao}}</td>
+            <td>{{arvore.pomar}}</td>
+           </tr>
+    </table>
+   
+</div>
+</div>

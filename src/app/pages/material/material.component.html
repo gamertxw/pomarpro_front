@@ -1,0 +1,61 @@
+<app-menu></app-menu>
+<div class="pagina">
+  <header>
+     <h1>Administração | Organização dos materiais</h1>
+  </header>
+  <form [formGroup]="material">
+    <div>
+        <mat-form-field appearance="outline" color="warn"> 
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome">
+         </mat-form-field>
+
+         <mat-form-field appearance="outline" color="warn">
+          <mat-label>valor</mat-label>
+          <input matInput formControlName="valor">
+         </mat-form-field>
+  </div>
+  <div>
+      <mat-form-field appearance="outline" color="warn"> 
+        <mat-label>tipo</mat-label>
+        <input matInput formControlName="tipo">
+       </mat-form-field>
+
+       <mat-form-field appearance="outline" color="warn">
+        <mat-label>fornecedor</mat-label>
+        <input matInput formControlName="fornecedor"> 
+       </mat-form-field>
+  
+      </div>
+      
+      <div class="controles">
+        <button type="button" mat-raised-button color="warn" [disabled]="material.enabled"  (click)="onIncluir()">Incluir</button>
+        <button type="button" mat-raised-button color="warn" [disabled]="material.invalid"  (click)="onSalvar()">Salvar</button>
+        <button type="button" mat-raised-button color="warn" [disabled]="material.disabled"  (click)="onCancelar()">Cancelar</button>
+    </div>
+
+
+  </form>
+
+
+  <div class="relatorio">
+    <h2>Cadastro de Material</h2>
+    <table>
+        <tr>
+            <th>ação</th>
+            <th>Nome</th>
+            <th>valor</th>
+            <th>tipo</th>
+            <th>fornecedor</th>
+           </tr>
+           <tr *ngFor=" let material of relatorio ">
+            <td><button>Excluir</button></td>
+            <td>{{material.nome}}</td>
+            <td>{{material.valor}}</td>
+            <td>{{material.tipo}}</td>
+            <td>{{material.fornecedor}}</td>
+           </tr>
+    </table>
+   
+</div>
+</div>
